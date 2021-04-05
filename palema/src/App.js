@@ -13,7 +13,7 @@ function App() {
   const [gameState, setGameState] = useState("homepage");
   return (
     <div className="App">
-      <h1>Palema</h1>
+      <h1 className = "h1 Title">Palema</h1>
       <QuizContext.Provider value={{gameState, setGameState}}>
       {gameState === "homepage"  && <HomePage />}
       {gameState === "menu"  && <MainMenu />}
