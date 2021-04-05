@@ -30,4 +30,6 @@
   flex-direction: column;
   align-items: center;
 }
-
+.options h1{
+  text-align: center;
+}
