@@ -1,7 +1,19 @@
-import React from "react";
+import React , { useContext } from 'react';
+import { QuizContext } from "../helpers/Context";
+import "../App.css";
 
 function HomePage(){
-    return <div>HomePage</div>;
+    const { gameState, setGameState } = useContext(QuizContext);
+
+    return (
+        <div className="HomePage">
+            <button onClick={() => {
+                setGameState("menu");
+            }}> Go to Menu
+
+            </button>
+        </div>
+        );
 }
 
 export default HomePage;

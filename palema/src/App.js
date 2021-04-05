@@ -19,7 +19,7 @@ function App() {
       {gameState === "menu"  && <MainMenu />}
       {gameState === "quiz"  && <Quiz />}
       {gameState === "endquiz"  && <EndQuiz />}
-      {gameState === "ChatBot"  && <ChatBot />}
+      {gameState === "chatbot"  && <ChatBot />}
       </QuizContext.Provider>
     </div>
   );
