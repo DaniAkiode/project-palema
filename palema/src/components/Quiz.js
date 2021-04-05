@@ -36,12 +36,12 @@ function Quiz(){
             </div>
 
             {currentQuestion == Questions.length -1 ? (
-            <button  onClick={finishQuiz}> Finish Quiz </button>
+            <button onClick={finishQuiz}> Finish Quiz </button>
             ) : (
             <button onClick={nextQuestion}> Next Question</button>
             )} 
             
-            <button className ="quitButton" onClick={() => {
+            <button className ="button quitButton" onClick={() => {
                 setGameState("menu");
             }}>QUIT</button>
         </div>
