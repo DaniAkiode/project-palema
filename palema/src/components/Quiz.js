@@ -15,7 +15,7 @@ function Quiz(){
     };
 
     const finishQuiz = () => {
-        setGameState("endScreen")
+        setGameState("endquiz")
     }
     return (
         <div className="Quiz">
