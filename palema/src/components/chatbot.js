@@ -10,7 +10,7 @@ function Chatbot(){
             Hi im anitta 
             <button className ="quitButton" onClick={() => {
                 setGameState("menu");
-            }}>QUIT</button>
+            }}>Back to menu</button>
         </div>
         );
 }
