@@ -10,7 +10,7 @@ function EndQuiz(){
             Quiz Ended
             <button className ="quitButton" onClick={() => {
                 setGameState("menu");
-            }}>Back to menu</button>
+            }}>Back to menu </button>
         </div>
         );
 }
