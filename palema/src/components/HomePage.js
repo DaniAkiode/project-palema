@@ -7,7 +7,7 @@ function HomePage(){
 
     return (
         <div className="HomePage">
-            <button onClick={() => {
+            <button className="GreenButton" onClick={() => {
                 setGameState("menu");
             }}> Go to Menu
 

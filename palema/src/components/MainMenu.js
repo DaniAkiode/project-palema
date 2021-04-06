@@ -7,17 +7,17 @@ function MainMenu(){
 
     return (
         <div className="Menu">
-            <button onClick={() => {
+            <button className="GreenButton" onClick={() => {
                 setGameState("quiz");
             }}>
                 Lesson 1
             </button>
-            <button onClick={() => {
+            <button className="YellowButton" onClick={() => {
                 setGameState("chatbot");
             }}>
                 Speak to Chatbot
             </button>
-            <button onClick={() => {
+            <button className="RedButton" onClick={() => {
                 setGameState("homepage");
             }}>
                 Log Out

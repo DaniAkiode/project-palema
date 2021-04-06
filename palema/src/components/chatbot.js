@@ -8,7 +8,7 @@ function Chatbot(){
     return (
         <div className="ChatBot">
             Hi im anitta 
-            <button className ="quitButton" onClick={() => {
+            <button className ="RedButton" onClick={() => {
                 setGameState("menu");
             }}>Back to menu</button>
         </div>

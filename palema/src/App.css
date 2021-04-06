@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
 }
-
+/*
 .HomePage button,
 .Menu button,
 .Quiz button,
@@ -42,10 +42,44 @@
   color: white;
   background-color: #00853E;
 }
+*/
 
-.quitButton {
+.RedButton {
+  width: 250px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
   background-color: #E31C23;
 }
+
+.GreenButton {
+  width: 250px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: #00853E;
+}
+
+.YellowButton {
+  width: 250px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: #B8D611;
+}
+
 
 .HomePage,
 .Menu,
@@ -64,4 +98,15 @@
 }
 .options h1{
   text-align: center;
+}
+.options button{
+    width: 250px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: #00853E;
 }

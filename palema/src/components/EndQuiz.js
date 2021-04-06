@@ -8,7 +8,7 @@ function EndQuiz(){
     return (
         <div className ="EndQuiz">
             Quiz Ended
-            <button className ="quitButton" onClick={() => {
+            <button className ="RedButton" onClick={() => {
                 setGameState("menu");
             }}>Back to menu </button>
         </div>
