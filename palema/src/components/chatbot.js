@@ -1,9 +1,43 @@
-import React , { useContext } from 'react';
+import React , { useContext, useEffect, useRef } from 'react';
 import { QuizContext } from "../helpers/Context";
 import { Responses } from "../helpers/RespoBank";
+import {TextField} from '@material-ui/core';
 import "../App.css";
 
+function useKey(key, cb) {
+    const callbackRef = useRef(cb);
+
+    useEffect(() => {
+        callbackRef.current = cb;
+    });
+
+    useEffect(() => {
+        function handle(event){
+            if (event.code === key){
+                callbackRef.current(event)
+            }
+        }
+
+        document.addEventListener("keypress", handle)
+        return () => document.removeEventListener("keypress", handle)
+    }, [key]) ;
+}
+
+
 function Chatbot(){
+    function handleEnter(){
+        console.log("Enter key is pressed")
+        //onChange={userText}
+    }
+    //useKey("Enter", handleEnter)
+
+
+    const userText=(u)=>{
+        if (u == Responses.user) {
+            <h2>{Responses.anita}</h2>
+        }
+    }
+
     const { gameState, setGameState } = useContext(QuizContext);
 
     return (
@@ -12,11 +46,16 @@ function Chatbot(){
             <div className="ChatBox">
                 <div className="chat">
                     <h2>Enter your responses in Yoruba Only</h2>
-                    <p id="chatLog"> lets chat</p>
+                    <p className="chatLog"> lets chat</p>
                 </div>
                 <div className="input">
-                    <input id="userbox" type="text"/>
+                    <TextField
+                        onKeyDown={useKey("Enter", handleEnter)}
+                        onChange={userText}
+                    />
+
                 </div>
+
             </div>
             <button className ="RedButton" onClick={() => {
                 setGameState("menu");
