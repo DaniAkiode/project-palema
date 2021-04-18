@@ -1,58 +1,55 @@
-import React , { useContext, useEffect, useRef } from 'react';
+import React , { useState, useContext, useEffect, useRef } from 'react';
 import { QuizContext } from "../helpers/Context";
 import { Responses } from "../helpers/RespoBank";
 import {TextField} from '@material-ui/core';
 import "../App.css";
 
-function useKey(key, cb) {
-    const callbackRef = useRef(cb);
-
-    useEffect(() => {
-        callbackRef.current = cb;
-    });
-
-    useEffect(() => {
-        function handle(event){
-            if (event.code === key){
-                callbackRef.current(event)
-            }
-        }
-
-        document.addEventListener("keypress", handle)
-        return () => document.removeEventListener("keypress", handle)
-    }, [key]) ;
-}
 
 
 function Chatbot(){
-    function handleEnter(){
-        console.log("Enter key is pressed")
-        //onChange={userText}
-    }
-    //useKey("Enter", handleEnter)
 
+    const { gameState, setGameState } = useContext(QuizContext);
 
-    const userText=(u)=>{
-        if (u == Responses.user) {
-            <h2>{Responses.anita}</h2>
+    const [CurrentResponse , setCurrentResponse ] =  useState("");
+    const [UserValue, setUserValue] = useState({
+        UserRespo: ""
+    });
+
+    const DisplayResponse = (UserRespo) => {
+        if (UserRespo == Responses[CurrentResponse].anita){
+            <h2>{Responses[CurrentResponse].anita}</h2>
         }
     }
 
-    const { gameState, setGameState } = useContext(QuizContext);
+    const handleUserInputChange = (event) => {
+        setUserValue({...UserValue, UserRespo: event.target.value})
+    } 
+
 
     return (
         <div className="ChatBot">
             E ka bo, Orukọ mi ni Anita 
             <div className="ChatBox">
-                <div className="chat">
+                <div className="BoxHeader">
                     <h2>Enter your responses in Yoruba Only</h2>
-                    <p className="chatLog"> lets chat</p>
+                </div>
+                <div className="BoxMid">
+                    <h2 className="chatLog"> lets chat</h2>
                 </div>
                 <div className="input">
-                    <TextField
-                        onKeyDown={useKey("Enter", handleEnter)}
-                        onChange={userText}
-                    />
+                    
+                        <input
+                        onChange={handleUserInputChange}
+                        value={UserValue.UserRespo}
+                        type="text" 
+                        className="form-field"
+                        placeholder="enter your response"
+                        name="UserRespo"
+                        />
+                        <button onClick={DisplayResponse}>
+                            Send
+                        </button>
+                        
 
                 </div>
 
