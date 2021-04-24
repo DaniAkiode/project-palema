@@ -1,23 +1,23 @@
 export const Responses = [
     {
         user: "E ka ro",
-        anita: "Ekaro!, So Wa dada?"
+        anita: "Ekaro!, So Wa dada?",
     },
     {
         user: "E ka san",
-        anita: "Ekasan! Ba wo ni?"
+        anita: "Ekasan! Ba wo ni?",
     },
     {
         user: "O Da Bo",
-        anita: "Odala"
+        anita: "Odala",
     },
     {
         user: "Kilo Ruko E",
-        anita: "Oruku MiNi Anita"
+        anita: "Oruku MiNi Anita",
     },
     {
         user: "Inu mi dun la ti moe",
-        anita: "Inu mi dun la ti moe"
+        anita: "Inu mi dun la ti moe",
     },
 ]
 
