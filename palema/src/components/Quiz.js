@@ -5,16 +5,22 @@ import "../App.css";
 
 function Quiz(){
 
-    const { gameState, setGameState } = useContext(QuizContext);
+    const {points , setPoints, setGameState } = useContext(QuizContext);
 
     const [currentQuestion, setCurrQuestion] = useState(0);
     const [optionChosen, setOptionChosen] = useState("1");
 
     const nextQuestion = () => {
+        if (Questions[currentQuestion].answer == optionChosen) {
+            setPoints(points + 1);
+        }
         setCurrQuestion(currentQuestion + 1);
     };
 
     const finishQuiz = () => {
+        if (Questions[currentQuestion].answer == optionChosen) {
+            setPoints(points + 1);
+        }
         setGameState("endquiz")
     }
     return (
