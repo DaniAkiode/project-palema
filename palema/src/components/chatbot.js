@@ -41,7 +41,7 @@ function Chatbot(){
                     {setUserInput(event.target.value)
                     }}
                     />
-                    <button>
+                    <button className="SendButton">
                         Send
                     </button>
                 </form>
