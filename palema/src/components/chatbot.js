@@ -42,13 +42,6 @@ function Chatbot(){
         setClicked(true);
     }
 
-    /*let handleKeyPress = (event) => {
-        if(event.key === 'Backspace'){
-            setClicked(false);
-            console.log('Key Pressed')
-        }
-    }*/
-
     return (
         <div className="ChatBot">
             <h2>E ka bo, Orukọ mi ni Anita</h2> 
