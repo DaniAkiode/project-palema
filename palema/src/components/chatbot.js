@@ -5,8 +5,33 @@ import RESPONSEDATA from "../helpers/RESPONSEDATA.json";
 import "../App.css";
 
 
+function useKey(key, cb) {
+
+    const callbackRef = useRef(cb);
+    
+    useEffect(() => {
+        callbackRef.current = cb;
+    });
+
+    useEffect(() => {
+        function handle(event) {
+            if (event.code === key) {
+                callbackRef.current(event);
+            }
+        }
+
+        document.addEventListener("keydown", handle);
+        return () => document.removeEventListener("keydown", handle);
+    },[key]);
+}
 
 function Chatbot(){
+
+    function handleEnter() {
+        console.log("BackSpace")
+        setClicked(false);
+    }
+    useKey("Backspace", handleEnter)
 
     const { gameState, setGameState } = useContext(QuizContext);
     const [userInput, setUserInput ] = useState("");
@@ -16,6 +41,13 @@ function Chatbot(){
         event.preventDefault();
         setClicked(true);
     }
+
+    /*let handleKeyPress = (event) => {
+        if(event.key === 'Backspace'){
+            setClicked(false);
+            console.log('Key Pressed')
+        }
+    }*/
 
     return (
         <div className="ChatBot">
@@ -34,12 +66,13 @@ function Chatbot(){
                     </div>
                     );
                 })}
-                    <form className="ChatbotForm" onSubmit={onSubmit}>
+                <form className="ChatbotForm" onSubmit={onSubmit}>
                     <input type = "text"
                     placeholder="Type in response..."
                     onChange={event => 
                     {setUserInput(event.target.value)
                     }}
+                    //onKeyPress={handleKeyPress}
                     />
                     <button className="SendButton">
                         Send
