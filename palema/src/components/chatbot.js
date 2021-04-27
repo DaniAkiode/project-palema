@@ -10,13 +10,18 @@ function Chatbot(){
 
     const { gameState, setGameState } = useContext(QuizContext);
     const [userInput, setUserInput ] = useState("");
-    //const [clicked, setClicked] = useState(false);
+    const [clicked, setClicked] = useState(false);
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        setClicked(true);
+    }
 
     return (
         <div className="ChatBot">
             E ka bo, Orukọ mi ni Anita 
             <div className="ChatSpace">
-                <form>
+                <form className="ChatbotForm" onSubmit={onSubmit}>
                     <input type = "text"
                     placeholder="Type in response..."
                     onChange={event => 
@@ -36,7 +41,7 @@ function Chatbot(){
                 }).map((val, key) => {
                     return(
                     <div className="chatspace" key={key}>
-                        <p>{val.chatbot}</p>
+                        {clicked ? <p>{val.chatbot}</p>: null}
                     </div>
                     );
                 })}
