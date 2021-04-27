@@ -19,9 +19,22 @@ function Chatbot(){
 
     return (
         <div className="ChatBot">
-            E ka bo, Orukọ mi ni Anita 
+            <h2>E ka bo, Orukọ mi ni Anita</h2> 
             <div className="ChatSpace">
-                <form className="ChatbotForm" onSubmit={onSubmit}>
+                {RESPONSEDATA.filter((val) => {
+                    if(userInput =="") {
+                        return null
+                    } else if (val.user.toLowerCase().includes(userInput.toLowerCase())){
+                        return val
+                    }
+                }).map((val, key) => {
+                    return(
+                    <div className="chatspace" key={key}>
+                        {clicked ? <h3>{val.chatbot}</h3>: null}
+                    </div>
+                    );
+                })}
+                    <form className="ChatbotForm" onSubmit={onSubmit}>
                     <input type = "text"
                     placeholder="Type in response..."
                     onChange={event => 
@@ -32,19 +45,6 @@ function Chatbot(){
                         Send
                     </button>
                 </form>
-                {RESPONSEDATA.filter((val) => {
-                    if(userInput =="") {
-                        return null
-                    } else if (val.user.toLowerCase().includes(userInput.toLowerCase())){
-                        return val
-                    }
-                }).map((val, key) => {
-                    return(
-                    <div className="chatspace" key={key}>
-                        {clicked ? <p>{val.chatbot}</p>: null}
-                    </div>
-                    );
-                })}
             </div>
             <button className ="RedButton" onClick={() => {
                 setGameState("menu");
