@@ -45,6 +45,7 @@ function Chatbot(){
     return (
         <div className="ChatBot">
             <h2>E ka bo, Orukọ mi ni Anita</h2> 
+            <p>Make sure you respond in yoruba only, start of by saying 'E ka ro' or 'E ka san'</p>
             <div className="ChatSpace">
                 {RESPONSEDATA.filter((val) => {
                     if(userInput =="") {
