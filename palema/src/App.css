@@ -16,7 +16,8 @@
 .Menu, 
 .Quiz, 
 .ChatBot,
-.EndQuiz {
+.EndQuiz,
+.VocabSheet {
   width: 500px;
   height: 500px;
   border-radius: 10px;
@@ -80,6 +81,17 @@
   background-color: #B8D611;
 }
 
+.BlackButton {
+  width: 250px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(252, 252, 252);
+  background-color: #1E1E1E;
+}
 
 .HomePage,
 .Menu,
@@ -131,4 +143,16 @@ input {
   color: white;
   background-color: #00853E;
   
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: white;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
 }

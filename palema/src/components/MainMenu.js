@@ -22,6 +22,11 @@ function MainMenu(){
             }}>
                 Speak to Chatbot
             </button>
+            <button className="BlackButton" onClick={() => {
+                setGameState("vocabsheet");
+            }}>
+                View Vocabulary Sheet 
+            </button>
             <button className="RedButton" onClick={() => {
                 setGameState("homepage");
             }}>

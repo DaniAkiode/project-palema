@@ -1,4 +1,5 @@
 import './App.css';
+
 import React, {useState, useContext} from 'react';
 import MainMenu from "./components/MainMenu";
 import HomePage from "./components/HomePage";
@@ -7,6 +8,7 @@ import Quiz2 from "./components/Quiz2";
 import EndQuiz from "./components/EndQuiz";
 import EndQuiz2 from "./components/EndQuiz2";
 import ChatBot from "./components/chatbot";
+import VocabSheet from "./components/VocabSheet"
 
 import { QuizContext } from './helpers/Context'
 
@@ -25,6 +27,7 @@ function App() {
       {gameState === "endquiz"  && <EndQuiz />}
       {gameState === "endquiz2"  && <EndQuiz2 />}
       {gameState === "chatbot"  && <ChatBot />}
+      {gameState === "vocabsheet" && <VocabSheet />}
       </QuizContext.Provider>
     </div>
   );
