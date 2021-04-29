@@ -1,6 +1,6 @@
 import React , { useContext } from 'react';
 import { QuizContext } from "../helpers/Context";
-import {Questions} from '../helpers/QuestionBank'
+import {Questions} from '../helpers/QuestionBank2'
 import "../App.css";
 
 function EndQuiz(){
@@ -19,8 +19,9 @@ function EndQuiz(){
             <button className="YellowButton" onClick={() => {setGameState("chatbot");}}>
                 Speak to Chatbot
             </button>
+            
             <button className="GreenButton" onClick={() => {setGameState("quiz2");}}>
-                Lesson 2
+                Proceed to Lesson 3
             </button>
         </div>
         );

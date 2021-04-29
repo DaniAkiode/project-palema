@@ -12,6 +12,11 @@ function MainMenu(){
             }}>
                 Lesson 1
             </button>
+            <button className="GreenButton" onClick={() => {
+                setGameState("quiz2");
+            }}>
+                Lesson 2
+            </button>
             <button className="YellowButton" onClick={() => {
                 setGameState("chatbot");
             }}>
