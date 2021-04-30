@@ -11,16 +11,26 @@ function EndQuiz(){
         setGameState("menu");
     };
 
+    const EnterChatbot = () => {
+        setPoints(0);
+        setGameState("chatbot");
+    };
+
+    const EnterLesson3 = () => {
+        setPoints(0);
+        setGameState("menu");
+    };
+
     return (
         <div className ="EndQuiz">
             <h1>Quiz Ended</h1>
             <h3>{points} / {Questions.length}</h3>
             <button className ="RedButton" onClick={restartQuiz}>Back to menu </button>
-            <button className="YellowButton" onClick={() => {setGameState("chatbot");}}>
+            <button className="YellowButton" onClick={EnterChatbot}>
                 Speak to Chatbot
             </button>
             
-            <button className="GreenButton" onClick={() => {setGameState("quiz2");}}>
+            <button className="GreenButton" onClick={EnterLesson3}>
                 Proceed to Lesson 3
             </button>
         </div>
