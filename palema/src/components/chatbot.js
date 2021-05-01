@@ -26,10 +26,10 @@ function useKey(key, cb) {
 
 function Chatbot(){
 
-    function handleEnter() {
+    function handleBackSpace() {
         setClicked(false);
     }
-    useKey("Backspace", handleEnter)
+    useKey("Backspace", handleBackSpace)
 
     const { gameState, setGameState } = useContext(QuizContext);
     const [userInput, setUserInput ] = useState("");
