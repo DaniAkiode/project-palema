@@ -1,7 +1,6 @@
 import React , { useState, useContext, useEffect, useRef } from 'react';
 import { QuizContext } from "../helpers/Context";
 import RESPONSEDATA from "../helpers/RESPONSEDATA.json";
-//import {TextField} from '@material-ui/core';
 import "../App.css";
 
 
@@ -28,7 +27,6 @@ function useKey(key, cb) {
 function Chatbot(){
 
     function handleEnter() {
-        console.log("BackSpace")
         setClicked(false);
     }
     useKey("Backspace", handleEnter)
@@ -66,7 +64,6 @@ function Chatbot(){
                     onChange={event => 
                     {setUserInput(event.target.value)
                     }}
-                    //onKeyPress={handleKeyPress}
                     />
                     <button className="SendButton">
                         Send
