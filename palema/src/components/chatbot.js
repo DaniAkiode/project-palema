@@ -49,7 +49,7 @@ function Chatbot(){
             <div className="ChatSpace">
                 {/*Display Chatbot Message */}
                 {RESPONSEDATA.filter((val) => {
-                    if(userInput =="" || userInput.length <= 3) {
+                    if(userInput =="") {
                         return null
                         //If val.user is equal to the user input
                     } else if (val.user.toLowerCase() === userInput.toLowerCase()){
