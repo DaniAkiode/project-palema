@@ -49,17 +49,18 @@ function Chatbot(){
             <div className="ChatSpace">
                 {/*Display Chatbot Message */}
                 {RESPONSEDATA.filter((val) => {
-                    if(userInput =="") {
+                    if(userInput =="" || userInput.length <= 3) {
                         return null
                         //If val.user is equal to the user input
                     } else if (val.user.toLowerCase().includes(userInput.toLowerCase())){
                         return val
-                    }
+                    } 
                 }).map((val, key) => {
                     return(
                     <div className="chatspace" key={key}>
                         {/*If the clickes enter then <h3> tag would be displayed otherwise, display nothing */}
                         {clicked ? <h3>{val.chatbot}</h3>: null}
+                        {/*{userInput.length <= 3? null: <h3>{val.chatbot}</h3>}*/}
                     </div>
                     );
                 })}{/*User Input*/}
