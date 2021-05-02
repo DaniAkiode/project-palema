@@ -51,6 +51,7 @@ function Chatbot(){
                 {RESPONSEDATA.filter((val) => {
                     if(userInput =="") {
                         return null
+                        //If val.user is equal to the user input
                     } else if (val.user.toLowerCase().includes(userInput.toLowerCase())){
                         return val
                     }
