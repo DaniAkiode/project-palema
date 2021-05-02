@@ -3,7 +3,7 @@ import { QuizContext } from "../helpers/Context";
 import RESPONSEDATA from "../helpers/RESPONSEDATA.json";
 import "../App.css";
 
-
+///Call Back funcation for backspace 
 function useKey(key, cb) {
 
     const callbackRef = useRef(cb);
@@ -23,18 +23,20 @@ function useKey(key, cb) {
         return () => document.removeEventListener("keydown", handle);
     },[key]);
 }
-
+//Main Function
 function Chatbot(){
-
+    //function to handle the BackSpace, deletes message if user presses the backspace 
     function handleBackSpace() {
         setClicked(false);
     }
     useKey("Backspace", handleBackSpace)
 
+    //Declasre Varibles 
     const { gameState, setGameState } = useContext(QuizContext);
     const [userInput, setUserInput ] = useState("");
     const [clicked, setClicked] = useState(false);
 
+    //OnSubmit function displays message if user clicks send
     const onSubmit = (event) => {
         event.preventDefault();
         setClicked(true);
@@ -45,6 +47,7 @@ function Chatbot(){
             <h2>E ka bo, Orukọ mi ni Anita</h2> 
             <p>Make sure you respond in yoruba only, start of by saying 'E ka ro' or 'E ka san'</p>
             <div className="ChatSpace">
+                {/*Display Chatbot Message */}
                 {RESPONSEDATA.filter((val) => {
                     if(userInput =="") {
                         return null
@@ -54,10 +57,11 @@ function Chatbot(){
                 }).map((val, key) => {
                     return(
                     <div className="chatspace" key={key}>
+                        {/*If the clickes enter then <h3> tag would be displayed otherwise, display nothing */}
                         {clicked ? <h3>{val.chatbot}</h3>: null}
                     </div>
                     );
-                })}
+                })}{/*User Input*/}
                 <form className="ChatbotForm" onSubmit={onSubmit}>
                     <input type = "text"
                     placeholder="Type in response..."
