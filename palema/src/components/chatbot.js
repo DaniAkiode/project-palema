@@ -52,7 +52,7 @@ function Chatbot(){
                     if(userInput =="" || userInput.length <= 3) {
                         return null
                         //If val.user is equal to the user input
-                    } else if (val.user.toLowerCase().includes(userInput.toLowerCase())){
+                    } else if (val.user.toLowerCase() === userInput.toLowerCase()){
                         return val
                     } 
                 }).map((val, key) => {
