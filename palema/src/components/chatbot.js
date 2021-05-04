@@ -21,7 +21,7 @@ function useKey(key, cb) {
 
         document.addEventListener("keydown", handle);
         return () => document.removeEventListener("keydown", handle);
-    },[key]);
+    },[key]);///(Code with Bhargav, 2019)
 }
 //Main Function
 function Chatbot(){
@@ -61,7 +61,7 @@ function Chatbot(){
                         {/*If the clickes send then <h3> tag would be displayed otherwise, display nothing */}
                         {clicked ? <h3>{val.chatbot}</h3>: null}
                     </div>
-                    );
+                    )/// (PedroTech, 2020)
                 })}{/*User Input*/}
                 <form className="ChatbotForm" onSubmit={onSubmit}>
                     <input type = "text"
@@ -72,7 +72,7 @@ function Chatbot(){
                     />
                     <button className="SendButton">
                         Send
-                    </button>
+                    </button>{/*(Blakely, 2020)*/}
                 </form>
             </div>
             <button className ="RedButton" onClick={() => {
@@ -83,3 +83,9 @@ function Chatbot(){
 }
 
 export default Chatbot;
+
+
+
+///Blakely, C., 2020. How to make a Basic Form using React Hooks | Beginner React Projects. [video] Available at: <https://www.youtube.com/watch?v=8hU0I8rY4u4&list=PLUAP7Jc-AKBH-8ViMJrgzBZK07XTh4q-a&index=133&t=7s&ab_channel=ChrisBlakely> [Accessed 4 May 2021].
+///Code with Bhargav, 2019. useKey | Handle keypress event | Daily react hooks. [video] Available at: <https://www.youtube.com/watch?v=YxsfJoKJZ50&list=PLUAP7Jc-AKBH-8ViMJrgzBZK07XTh4q-a&index=134&ab_channel=CodewithBhargav> [Accessed 4 May 2021].
+///PedroTech, 2020. Search Filter React Tutorial - Search Bar in React. [video] Available at: <https://www.youtube.com/watch?v=mZvKPtH9Fzo&list=PLUAP7Jc-AKBEkqSCjRkkzwC6D_19K24tm&index=2&ab_channel=PedroTech> [Accessed 4 May 2021].

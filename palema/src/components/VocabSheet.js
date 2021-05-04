@@ -30,7 +30,7 @@ function VocabSheet(){
                     <td>Are you good</td>
                     <td>Show wa dada</td>
                 </tr>
-            </table>
+            </table>{/*(Kayode, 2017)*/}
 
             <button className="GreenButton" onClick={() => {
                 setGameState("menu");
@@ -42,3 +42,6 @@ function VocabSheet(){
 }
 
 export default VocabSheet;
+
+
+///Kayode, B., 2017. Yoruba Lessons || Let's Learn Yoruba. [image] Available at: <https://www.youtube.com/watch?v=3Ne5TDM1nys&list=PLopOmpWBxN9oNrLtYezEtX9yEayfMLvJZ&ab_channel=BlessingKayode> [Accessed 4 May 2021].
