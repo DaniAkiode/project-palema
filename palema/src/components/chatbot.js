@@ -55,12 +55,11 @@ function Chatbot(){
                     } else if (val.user.toLowerCase() === userInput.toLowerCase()){
                         return val
                     } 
-                }).map((val, key) => {
+                }).map((val, key) => {///map() would then display the text once the userInput has been validated
                     return(
                     <div className="chatspace" key={key}>
-                        {/*If the clickes enter then <h3> tag would be displayed otherwise, display nothing */}
+                        {/*If the clickes send then <h3> tag would be displayed otherwise, display nothing */}
                         {clicked ? <h3>{val.chatbot}</h3>: null}
-                        {/*{userInput.length <= 3? null: <h3>{val.chatbot}</h3>}*/}
                     </div>
                     );
                 })}{/*User Input*/}
