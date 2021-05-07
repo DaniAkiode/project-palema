@@ -49,7 +49,7 @@ function Chatbot(){
             <div className="ChatSpace">
                 {/*Display Chatbot Message */}
                 {RESPONSEDATA.filter((val) => {
-                    if(userInput =="") {
+                    if (userInput == "") {
                         return null
                         //If val.user is equal to the user input
                     } else if (val.user.toLowerCase() === userInput.toLowerCase()){
@@ -64,7 +64,7 @@ function Chatbot(){
                     )/// (PedroTech, 2020)
                 })}{/*User Input*/}
                 <form className="ChatbotForm" onSubmit={onSubmit}>
-                    <input type = "text"
+                    <input type ="text"
                     placeholder="Type in response..."
                     onChange={event => 
                     {setUserInput(event.target.value)
